@@ -17,7 +17,8 @@
 <a class="skip" href="#page">דילוג לתוכן</a>
 <div id="nav"></div>
 
-<main id="page"><div id="page-inner"></div></main>
+<main id="page" tabindex="-1"><div id="page-inner"></div></main>
+<footer class="foot" role="contentinfo"><a href="accessibility.html">הצהרת נגישות</a><span aria-hidden="true">·</span><a href="privacy.html">מדיניות פרטיות</a><span aria-hidden="true">·</span><a href="finish.html">יצירת קשר</a><span aria-hidden="true">·</span><span>מרכז סיפתח, ירושלים</span></footer>
 <template id="nav-tpl"><header dir="rtl" style="position: relative; z-index: 10; background: #FFFFFF; border-bottom: 3px solid #C1272D; font-family: Heebo, Arial, sans-serif; color: #24211F">
 <div style="max-width: 1240px; margin: 0 auto; padding: 10px 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px">
 <a href="index.html" aria-label="סיפתח – למפה" style="flex: none; display: flex"><img src="logo.png" alt="סיפתח" style="height: 50px; width: auto; display: block"></a>
@@ -43,17 +44,18 @@
 </div></sc-if>
 <button type="button" aria-label="פתיחת המפה בקטן" aria-expanded="{{miniExpanded}}" onClick="{{toggleMini}}" style="width: 64px; height: 64px; border-radius: 50%; border: 4px solid #FFFFFF; background: #C1272D; color: #FFFFFF; box-shadow: 0 6px 18px rgba(60,30,20,0.3); display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"></path><path d="M9 4v14"></path><path d="M15 6v14"></path></svg></button>
 </div></header></template>
-<template id="page-tpl"><div dir="rtl" style="min-height: 100vh; font-family: Heebo, Arial, sans-serif; color: #24211F; background-color: #FBF3E0; ">
+<template id="page-tpl"><div dir="rtl" style="min-height: 100vh; font-family: Heebo, Arial, sans-serif; color: #24211F; background-color: #FBE3E6; ">
 
 <div style="max-width: 1040px; margin: 0 auto; padding: 48px 24px 72px; box-sizing: border-box">
-<div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap"><div style="flex: 1 1 520px; min-width: 0"><span style="display: inline-block; background: #A8DDF5; color: #7A1C2B; font-size: 16px; font-weight: 900; padding: 6px 18px; transform: rotate(-1.5deg); clip-path: polygon(0 0, 100% 0, 98.6% 25%, 100% 50%, 98.6% 75%, 100% 100%, 0 100%, 1.4% 75%, 0 50%, 1.4% 25%)">תחנה · הגישו למשרה אחת</span>
-<h1 style="margin: 18px 0 16px; font-size: 52px; line-height: 1.08; font-weight: 800; color: #C1272D">הגישו למשרה אחת</h1>
-<p style="margin: 0; font-size: 28px; line-height: 1.55; color: #1D6E9E; max-width: 60ch">איתרת משרה אחת שמתאימה לך <br>באתר / קבוצה + התאמת אליה קו"ח + שלחת אותם</p></div><img src="ill-cv.png" alt="קורות חיים" style="flex: none; width: 260px; height: 260px; border-radius: 32px; object-fit: cover; box-shadow: 0 10px 24px rgba(122,28,43,0.22)"></div>
+<div data-hero style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap"><div style="flex: 1 1 520px; min-width: 0"><span style="display: inline-block; background: #A8DDF5; color: #7A1C2B; font-size: 15px; font-weight: 900; padding: 6px 18px; transform: rotate(-1.5deg); clip-path: polygon(0 0, 100% 0, 98.6% 25%, 100% 50%, 98.6% 75%, 100% 100%, 0 100%, 1.4% 75%, 0 50%, 1.4% 25%)">תחנה · הגישו למשרה אחת</span>
+<h1 style="margin: 18px 0 16px; font-size: 44px; line-height: 1.08; font-weight: 800; color: #C1272D">הגישו למשרה אחת</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #1D6E9E; max-width: 60ch">איתרת משרה אחת שמתאימה לך <br>באתר / קבוצה + התאמת אליה קו"ח + שלחת אותם</p></div><img src="ill-cv.png" alt="קורות חיים" style="flex: none; width: 260px; height: 260px; border-radius: 32px; object-fit: cover; box-shadow: 0 10px 24px rgba(122,28,43,0.22)"></div>
 <div style="display: flex; flex-direction: column; gap: 22px; margin-top: 32px">
 
 
-<section style="background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 8px solid #C1272D; border-radius: 6px; box-shadow: 0 6px 18px rgba(60,40,20,0.08); padding: 28px 30px; display: flex; flex-direction: column; gap: 14px"><h2 style="margin: 0; font-size: 32px; line-height: 1.25; font-weight: 800; color: #24211F">איפה מחפשים?</h2><div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="#" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; background: #C1272D; color: #FFFFFF; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 24px">קבוצת המשרות של הרשות</a><a href="#" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border: 2px solid #C1272D; color: #C1272D; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 24px">לוח המשרות של העירייה</a></div><p style="margin: 0; font-size: 20px; line-height: 1.5; color: #1D6E9E; font-weight: 700">להוסיף עוד קבוצות</p></section>
+<section style="background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 8px solid #C1272D; border-radius: 6px; box-shadow: 0 6px 18px rgba(60,40,20,0.08); padding: 28px 30px; display: flex; flex-direction: column; gap: 14px"><h2 style="margin: 0; font-size: 26px; line-height: 1.25; font-weight: 800; color: #24211F">איפה מחפשים?</h2><div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="#" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; background: #C1272D; color: #FFFFFF; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 20px">קבוצת המשרות של הרשות</a><a href="#" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border: 2px solid #C1272D; color: #C1272D; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 20px">לוח המשרות של העירייה</a></div><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #1D6E9E; font-weight: 700">להוסיף עוד קבוצות</p></section>
 </div>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 20px; border-top: 1px solid #E6D9BE"><a href="people.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 2px solid #C1272D; border-radius: 12px; color: #C1272D; text-decoration: none; font-weight: 700">→ לא מחכים למודעות – יוצרים קשרים</a><a href="review.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; background: #C1272D; border: 2px solid #C1272D; border-radius: 12px; color: #FFFFFF; text-decoration: none; font-weight: 700">עוצרים לבדוק אם הדרך עובדת ←</a></div>
 
 </div></div></template>
 <script>window.SITE_PAGES={"Main": "index.html", "Checklist": "checklist.html", "Data": "data.html", "Compass": "compass.html", "Orgs": "orgs.html", "Mail": "mail.html", "People": "people.html", "Apply": "apply.html", "Review": "review.html", "Finish": "finish.html"};</script>
@@ -75,6 +77,9 @@ return { apply: this.list("apply", ["המשרה תואמת את המצפן של�
 return Component;})();
 </script>
 <script src="boot.js"></script>
+<script src="config.js"></script>
+<script src="gate.js"></script>
+<script src="stations.js"></script>
 
 </body>
 </html>

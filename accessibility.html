@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הצהרת נגישות | סיפתח</title>
+<meta name="description" content="מפת הדרכים לחיפוש עבודה של סיפתח – מרכז פיתוח קריירה לצעירים וצעירות בירושלים.">
+<meta property="og:title" content="לסיום | סיפתח">
+<meta property="og:description" content="מדריך מעשי, שבוע אחרי שבוע, לחיפוש עבודה ממוקד.">
+<meta property="og:image" content="logo.png">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&amp;family=Heebo:wght@300;400;500;700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="" data-nav="none">
+<a class="skip" href="#page">דילוג לתוכן</a>
+<div id="nav"></div>
+
+<main id="page" tabindex="-1"><div id="page-inner"></div></main>
+<footer class="foot" role="contentinfo"><a href="accessibility.html">הצהרת נגישות</a><span aria-hidden="true">·</span><a href="privacy.html">מדיניות פרטיות</a><span aria-hidden="true">·</span><a href="finish.html">יצירת קשר</a><span aria-hidden="true">·</span><span>מרכז סיפתח, ירושלים</span></footer>
+<template id="nav-tpl"><header dir="rtl" style="position: relative; z-index: 10; background: #FFFFFF; border-bottom: 3px solid #C1272D; font-family: Heebo, Arial, sans-serif; color: #24211F">
+<div style="max-width: 1240px; margin: 0 auto; padding: 10px 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px">
+<a href="index.html" aria-label="סיפתח – למפה" style="flex: none; display: flex"><img src="logo.png" alt="סיפתח" style="height: 50px; width: auto; display: block"></a>
+<nav aria-label="תפריט ראשי" style="flex: 1 1 600px">
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px">
+<sc-for list="{{tabs}}" as="tab" hint-placeholder-count="7"><li style="position: relative">
+<sc-if value="{{tab.isLink}}" hint-placeholder-val="{{ true }}"><a href="{{tab.href}}" style="display: flex; align-items: center; gap: 6px; min-height: 46px; padding: 0 14px; border: none; border-radius: 8px; font-family: inherit; font-size: 17px; font-weight: 700; text-decoration: none; cursor: pointer; white-space: nowrap; background: {{tab.bg}}; color: {{tab.fg}}">{{tab.label}}</a></sc-if>
+<sc-if value="{{tab.isMenu}}" hint-placeholder-val="{{ false }}"><button type="button" aria-expanded="{{tab.expanded}}" onClick="{{tab.toggle}}" style="display: flex; align-items: center; gap: 6px; min-height: 46px; padding: 0 14px; border: none; border-radius: 8px; font-family: inherit; font-size: 17px; font-weight: 700; text-decoration: none; cursor: pointer; white-space: nowrap; background: {{tab.bg}}; color: {{tab.fg}}">{{tab.label}}<svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+<sc-if value="{{tab.open}}" hint-placeholder-val="{{ false }}"><div style="position: absolute; top: 52px; right: 0; min-width: 260px; background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 6px solid #C1272D; border-radius: 6px; box-shadow: 0 14px 30px rgba(60,30,20,0.18); padding: 8px; display: flex; flex-direction: column; gap: 2px">
+<sc-for list="{{tab.items}}" as="it" hint-placeholder-count="3"><a href="{{it.href}}" style="display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 4px 10px; border-radius: 8px; text-decoration: none; color: #24211F; font-size: 16px; font-weight: 700"><span style="flex: none; width: 28px; height: 28px; box-sizing: border-box; border-radius: 50%; border: 4px solid #C1272D; color: #C1272D; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{it.n}}</span>{{it.label}}</a></sc-for>
+</div></sc-if></sc-if>
+</li></sc-for>
+</ul></nav></div>
+<div style="position: fixed; left: 20px; bottom: 20px; z-index: 50; display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<sc-if value="{{miniOpen}}" hint-placeholder-val="{{ false }}"><div role="dialog" aria-label="המפה בקטן" style="background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 6px solid #C1272D; border-radius: 10px; box-shadow: 0 16px 40px rgba(60,30,20,0.28); padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span style="font-size: 18px; font-weight: 800; color: #24211F">המפה שלך</span><a href="index.html" style="font-size: 15px; font-weight: 700; color: #C1272D">למפה המלאה ←</a></div>
+<div style="position: relative; width: 540px; height: 420px; border-radius: 8px; overflow: hidden; background: #FFCDD1">
+<img src="map-bg.jpg" alt="" aria-hidden="true" style="position: absolute; left: 0; top: -90px; width: 540px; height: 552px; object-fit: cover; opacity: 0.3">
+<svg aria-hidden="true" width="540" height="420" viewBox="0 0 540 420" style="position: absolute; left: 0; top: 0"><polyline points="426,36 45,36 45,132 495,132 495,156" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="426,36 45,36 45,132 495,132 495,156" fill="none" stroke="#C25A00" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="495,156 45,156 45,258" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="495,156 45,156 45,258" fill="none" stroke="#C1272D" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="45,258 495,258 495,318 45,318 45,378" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="45,258 495,258 495,318 45,318 45,378" fill="none" stroke="#3FA3D9" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="45,378 414,378" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"></polyline><polyline points="45,378 414,378" fill="none" stroke="#7A1C2B" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"></polyline></svg>
+<span style="position: absolute; left: 51px; top: 132px; background: #C1272D; color: #FFFFFF; font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 5px">שבוע 1</span><span style="position: absolute; left: 51px; top: 234px; background: #A8DDF5; color: #7A1C2B; font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 5px">שבוע 2</span><span style="position: absolute; left: 51px; top: 294px; background: #A8DDF5; color: #7A1C2B; font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 5px">שבוע 3</span><span style="position: absolute; left: 51px; top: 354px; background: #7A1C2B; color: #FFFFFF; font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 5px">שבוע 4</span><a href="index.html" title="יציאה" style="position: absolute; left: 366px; top: 25px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #C25A00; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">יציאה</span></a><a href="checklist.html" title="צ'ק ליסט שבועי" style="position: absolute; left: 192px; top: 25px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #C25A00; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">צ'ק ליסט שבועי</span></a><a href="compass.html" title="הגדירו כיוון" style="position: absolute; left: 365px; top: 145px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #C1272D; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">הגדירו כיוון</span></a><a href="orgs.html" title="2 ארגונים" style="position: absolute; left: 262px; top: 145px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #C1272D; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">2 ארגונים</span></a><a href="people.html" title="אדם אחד" style="position: absolute; left: 158px; top: 145px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #C1272D; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">אדם אחד</span></a><a href="apply.html" title="משרה אחת" style="position: absolute; left: 54px; top: 145px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #C1272D; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">משרה אחת</span></a><a href="orgs.html" title="2 ארגונים" style="position: absolute; left: 126px; top: 247px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #3FA3D9; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">2 ארגונים</span></a><a href="people.html" title="אדם אחד" style="position: absolute; left: 240px; top: 247px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #3FA3D9; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">אדם אחד</span></a><a href="apply.html" title="משרה אחת" style="position: absolute; left: 354px; top: 247px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #3FA3D9; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">משרה אחת</span></a><a href="orgs.html" title="2 ארגונים" style="position: absolute; left: 354px; top: 307px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #3FA3D9; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">2 ארגונים</span></a><a href="people.html" title="אדם אחד" style="position: absolute; left: 240px; top: 307px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #3FA3D9; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">אדם אחד</span></a><a href="apply.html" title="משרה אחת" style="position: absolute; left: 126px; top: 307px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #3FA3D9; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">משרה אחת</span></a><a href="review.html" title="עצירת ביניים" style="position: absolute; left: 90px; top: 367px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #7A1C2B; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">עצירת ביניים</span></a><a href="finish.html" title="היעד: לסיום" style="position: absolute; left: 354px; top: 367px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none"><span aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 5px solid #7A1C2B; box-shadow: 0 1px 4px rgba(0,0,0,0.25)"></span><span style="background: #FFFFFF; color: #24211F; font-size: 12px; font-weight: 700; line-height: 1.2; padding: 1px 6px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); white-space: nowrap">היעד: לסיום</span></a>
+</div>
+<span style="font-size: 14px; color: #1D6E9E">לחצו על תחנה כדי לעבור אליה</span>
+</div></sc-if>
+<button type="button" aria-label="פתיחת המפה בקטן" aria-expanded="{{miniExpanded}}" onClick="{{toggleMini}}" style="width: 64px; height: 64px; border-radius: 50%; border: 4px solid #FFFFFF; background: #C1272D; color: #FFFFFF; box-shadow: 0 6px 18px rgba(60,30,20,0.3); display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"></path><path d="M9 4v14"></path><path d="M15 6v14"></path></svg></button>
+</div></header></template>
+<template id="page-tpl"><div dir="rtl" style="min-height: 100vh; font-family: Heebo, Arial, sans-serif; color: #24211F; background: #FBF3E0">
+<article lang="he" style="max-width: 860px; margin: 0 auto; padding: 48px 24px 72px; box-sizing: border-box; font-size: 19px; line-height: 1.7">
+<h1 style="margin: 0 0 18px; font-size: 44px; font-weight: 800; color: #C1272D">הצהרת נגישות</h1>
+<p>מרכז סיפתח רואה חשיבות רבה בכך שכל אדם, כולל אנשים עם מוגבלות, יוכל להשתמש במפת הדרכים לחיפוש עבודה בקלות ובעצמאות. האתר הונגש בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, ולתקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA.</p>
+
+<h2 style="font-size: 26px; font-weight: 800; color: #7A1C2B; margin: 32px 0 8px">אמצעי הנגישות באתר</h2>
+<ul style="padding-inline-start: 24px; margin: 0">
+<li>האתר בנוי בעברית, בכיוון ימין-לשמאל, עם הגדרת שפה וכיוון לכל עמוד.</li>
+<li>ניתן לנווט בכל האתר באמצעות המקלדת בלבד (Tab, Shift+Tab, Enter ורווח), כולל התפריט, הכפתורים והטפסים. רכיב שבפוקוס מסומן במסגרת בולטת.</li>
+<li>בראש כל עמוד יש קישור "דילוג לתוכן" שמוביל ישירות לתוכן המרכזי.</li>
+<li>העמודים בנויים עם כותרות במבנה היררכי, אזורי ניווט ותוכן מסומנים, ותיאור טקסטואלי לתמונות בעלות משמעות. איורים דקורטיביים מוסתרים מקוראי מסך.</li>
+<li>לכל שדה בטופס יש תווית, ושגיאות מוצגות בטקסט בעברית ומוקראות לקוראי מסך.</li>
+<li>ניגודיות הצבעים בטקסט נבדקה ועומדת ביחס הנדרש (4.5:1 לטקסט רגיל).</li>
+<li>ניתן להגדיל את התצוגה בדפדפן (Ctrl ו-+) עד 200% בלי לאבד תוכן.</li>
+<li>האתר אינו משתמש בתוסף נגישות חיצוני; ההנגשה נעשתה בקוד האתר עצמו.</li>
+</ul>
+
+<h2 style="font-size: 26px; font-weight: 800; color: #7A1C2B; margin: 32px 0 8px">מגבלות נגישות ידועות</h2>
+<ul style="padding-inline-start: 24px; margin: 0">
+<li>מפת הדרכים בעמוד הראשי מוצגת כאיור רחב. במסכים צרים (טלפון) יש לגלול אותה גם לצדדים. כל תוכן המפה זמין גם בעמודי התחנות דרך התפריט העליון. גרסה מותאמת לטלפון נמצאת בתכנון.</li>
+<li>קובץ ה-PDF של הצ'ק ליסט השבועי טרם נבדק במלואו לפי ת"י 5568 חלק 2. ניתן לקבל את תוכנו בפורמט נגיש לפי בקשה.</li>
+<li>האתר מקשר לשירותים חיצוניים (כגון ChatGPT ו-WhatsApp) שנגישותם באחריות מפעיליהם.</li>
+</ul>
+
+<h2 style="font-size: 26px; font-weight: 800; color: #7A1C2B; margin: 32px 0 8px">דיווח על בעיית נגישות ובקשת הנגשה</h2>
+<p style="margin: 0">נתקלתם ברכיב שאינו נגיש, או זקוקים להתאמה? נשמח לשמוע ולתקן. אפשר לפנות אלינו בכל אחת מהדרכים:</p>
+<ul style="padding-inline-start: 24px; margin: 8px 0 0">
+<li>טלפון: <a href="tel:+97225468647" dir="ltr">02-5468647</a></li>
+<li>וואטסאפ: <a href="https://wa.me/97225468647">שליחת הודעה</a></li>
+<li>דוא"ל: <a href="mailto:SIFTACH@jerusalem.muni.il" dir="ltr">SIFTACH@jerusalem.muni.il</a></li>
+</ul>
+<p>כדי שנוכל לטפל בפנייה, נשמח לפרטים: באיזה עמוד, מה ניסיתם לעשות, ובאיזה דפדפן או טכנולוגיה מסייעת השתמשתם.</p>
+<p>רכז/ת נגישות: [שם, טלפון ומייל – יש להשלים אם מרכז סיפתח מחויב במינוי רכז נגישות]</p>
+
+<h2 style="font-size: 26px; font-weight: 800; color: #7A1C2B; margin: 32px 0 8px">הסדרי נגישות במרכז</h2>
+<p style="margin: 0">[פרטי הנגישות של מרכז סיפתח עצמו – כתובת, נגישות המבנה, חניה, ואמצעי עזר הניתנים לפי בקשה – יש להשלים]</p>
+
+<p style="margin-top: 32px; font-size: 16px; color: #5b5550">תאריך עדכון ההצהרה: 27 בנובמבר 2026</p>
+</article></div>
+</template>
+<script>window.SITE_PAGES={"Main": "index.html", "Checklist": "checklist.html", "Data": "data.html", "Compass": "compass.html", "Orgs": "orgs.html", "Mail": "mail.html", "People": "people.html", "Apply": "apply.html", "Review": "review.html", "Finish": "finish.html"};</script>
+<script src="dc-lite.js"></script>
+<script src="nav.js"></script>
+<script>
+window.PageComponent=(function(){
+
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = {}; }
+tog(g, i) { const o = Object.assign({}, this.state[g] || {}); o[i] = !o[i]; this.setState({ [g]: o }); }
+list(g, items) { const s = this.state[g] || {}; return items.map((t, i) => ({ t: t, id: g + i, on: !!s[i], toggle: () => this.tog(g, i) })); }
+renderVals() {
+
+return {};
+}
+}
+
+return Component;})();
+</script>
+<script src="boot.js"></script>
+<script src="config.js"></script>
+<script src="gate.js"></script>
+
+
+</body>
+</html>

@@ -31,8 +31,8 @@
     var st = (window.__page && window.__page.state) || {};
     var params = st.params || [], strengths = st.strengths || [];
     try { await document.fonts.load('800 40px Heebo'); await document.fonts.load('400 20px Heebo'); } catch (e) {}
-    var logo = await loadImg('assets/logo.png');
-    var road = await loadImg('assets/ill-road.png');
+    var logo = await loadImg('logo.png');
+    var road = await loadImg('ill-road.png');
     var c = document.createElement('canvas'); c.width = 1240; c.height = 1754;
     var x = c.getContext('2d'); x.direction = 'rtl'; x.textAlign = 'right'; x.textBaseline = 'top';
     x.fillStyle = CREAM; x.fillRect(0, 0, 1240, 1754);

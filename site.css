@@ -26,3 +26,4 @@ input[type=checkbox],input[type=range]{accent-color:#C1272D}
   #nav header a, #nav header button{font-size:15px !important;min-height:40px !important;padding:0 10px !important}
   #nav header img{height:36px !important}
 }
+@media (min-width: 761px){ body:not(.wide) #page-inner{zoom:0.82} }

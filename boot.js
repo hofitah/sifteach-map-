@@ -12,7 +12,7 @@
     var sizer = document.createElement('div');
     outer.insertBefore(sizer, inner); sizer.appendChild(inner);
     var fit = function () {
-      var s = Math.max(Math.min(1, outer.clientWidth / 1800), 0.42);
+      var s = Math.max(outer.clientWidth / 1800, 0.42);
       inner.style.transform = 'scale(' + s + ')';
       sizer.style.width = (1800 * s) + 'px';
       sizer.style.height = (inner.offsetHeight * s) + 'px';

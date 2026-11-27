@@ -1,0 +1,28 @@
+html,body{margin:0;padding:0}
+body{background:#FBF3E0;font-family:Heebo,Arial,sans-serif;color:#24211F}
+a{color:#7A1C2B}a:hover{color:#5A1420}
+input[type=checkbox],input[type=range]{accent-color:#C1272D}
+:focus-visible{outline:3px solid #1D6E9E;outline-offset:2px}
+.skip{position:absolute;right:-9999px;top:0;background:#fff;padding:8px 14px;z-index:100}
+.skip:focus{right:12px}
+#nav{position:sticky;top:0;z-index:40}
+.scaler{overflow:hidden;width:100%}
+.scaler #page-inner{width:1800px;transform-origin:top right}
+#page-inner > div[dir="rtl"]{min-height:auto !important}
+@media (max-width: 760px){
+  #page-inner h1{font-size:40px !important}
+  #page-inner [style*="grid-template-columns: repeat(2"]{grid-template-columns:minmax(0,1fr) !important}
+  #page-inner [style*="max-width: 1040px"]{padding:28px 16px 56px !important}
+  #page-inner img[style*="width: 260px"]{width:160px !important;height:160px !important}
+  #page-inner section{padding-left:18px !important;padding-right:18px !important}
+}
+.scaler{overflow-x:auto;overflow-y:hidden}
+.scaler > div{position:relative}
+#intro{box-sizing:border-box}
+@media (max-width: 760px){
+  #intro{grid-template-columns:minmax(0,1fr) !important;height:auto !important}
+  #intro h1{font-size:44px !important}
+  #intro p{font-size:20px !important}
+  #nav header a, #nav header button{font-size:15px !important;min-height:40px !important;padding:0 10px !important}
+  #nav header img{height:36px !important}
+}

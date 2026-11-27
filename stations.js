@@ -7,7 +7,7 @@
   var PAGES = {
     compass: { ids: ['w1s1'], name: 'הגדירו כיוון' },
     orgs: { ids: ['w1s2', 'w2s1', 'w3s1'], name: 'פונים לארגונים' },
-    people: { ids: ['w1s3', 'w2s2', 'w3s2'], name: 'פונים לאנשים' },
+    people: { ids: ['w1s3', 'w2s2', 'w3s2'], name: 'יוצרים קשרים' },
     apply: { ids: ['w1s4', 'w2s3', 'w3s3'], name: 'הגישו למשרה אחת' },
     review: { ids: ['w4'], name: 'עצירת ביניים' }
   };
@@ -62,7 +62,7 @@
   document.head.appendChild(css);
 
 
-  var NAMES = { w1s1: 'הגדירו כיוון', w1s2: 'ארגונים', w1s3: 'אנשים', w1s4: 'הגשה', w2s1: 'ארגונים', w2s2: 'אנשים', w2s3: 'הגשה', w3s1: 'ארגונים', w3s2: 'אנשים', w3s3: 'הגשה', w4: 'עצירת ביניים' };
+  var NAMES = { w1s1: 'הגדירו כיוון', w1s2: 'ארגונים', w1s3: 'קשרים', w1s4: 'הגשה', w2s1: 'ארגונים', w2s2: 'קשרים', w2s3: 'הגשה', w3s1: 'ארגונים', w3s2: 'קשרים', w3s3: 'הגשה', w4: 'עצירת ביניים' };
   var HREF = { w1s1: 'compass.html', w4: 'review.html' };
   ['1', '2', '3'].forEach(function (w) { HREF['w' + w + (w === '1' ? 's2' : 's1')] = 'orgs.html'; HREF['w' + w + (w === '1' ? 's3' : 's2')] = 'people.html'; HREF['w' + w + (w === '1' ? 's4' : 's3')] = 'apply.html'; });
   var WCOL = { 1: '#C1272D', 2: '#1D6E9E', 3: '#1D6E9E', 4: '#7A1C2B' };
@@ -111,7 +111,7 @@
 
   function next() {
     if (key === 'compass') return { href: 'orgs.html', text: 'פונים לארגונים' };
-    if (key === 'orgs') return { href: 'people.html', text: 'פונים לאנשים' };
+    if (key === 'orgs') return { href: 'people.html', text: 'יוצרים קשרים' };
     if (key === 'people') return { href: 'apply.html', text: 'הגישו למשרה אחת' };
     if (key === 'apply') return WEEK(sel) < 3 ? { href: 'orgs.html', text: 'שבוע ' + (WEEK(sel) + 1) + ' · פונים לארגונים' } : { href: 'review.html', text: 'שבוע 4 · עצירת ביניים' };
     return { href: 'finish.html', text: 'לסיום' };
@@ -119,6 +119,7 @@
 
   function render() {
     var n = ORDER.indexOf(sel) + 1, w = WEEK(sel), on = !!st.done[sel], dc = countDone();
+    document.body.style.setProperty('--stnum', '"שבוע ' + w + ' · תחנה ' + n + ' · "');
     here.innerHTML = timeline(sel, 'שבוע ' + w + ' · תחנה ' + n + ' מתוך 11 · ' + page.name);
     var weeks = page.ids.length > 1 ? '<div class="weeks"><span>התחנה הזו חוזרת בכל שבוע. סימון לפי שבוע:</span>' +
       page.ids.map(function (k) { return '<button type="button" class="wk" data-k="' + k + '" aria-pressed="' + (!!st.done[k]) + '">' + (st.done[k] ? '✓ ' : '') + 'שבוע ' + WEEK(k) + '</button>'; }).join('') + '</div>' : '';

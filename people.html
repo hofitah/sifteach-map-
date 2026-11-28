@@ -60,19 +60,19 @@
 <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #24211F; "><b>מה היית חושבים על האדם שפנה? מה היית עונה לו?</b></p>
 <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #24211F; ">רוב הסיכויים שהיית עונה בשמחה וגם מנסה לעזור :)</p>
 <p style="margin: 0; font-size: 20px; line-height: 1.6; color: #24211F; ">ובדיוק בגלל זה - זה סבבה לפנות לאנשים שאנחנו מכירים (גם אם הקשר הצטנן) וגם לאנשים שאנחנו לא מכירים (אבל הגענו אליהם דרך מישהו).</p>
-<section aria-labelledby="selfT" style="background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 8px solid #3FA3D9; box-shadow: 0 6px 18px rgba(60,40,20,0.08); border-radius: 28px; padding: 40px 44px; display: flex; flex-direction: column; gap: 22px">
-<span style="align-self: flex-start; background: #A8DDF5; color: #7A1C2B; font-size: 17px; font-weight: 900; padding: 6px 18px; transform: rotate(-1.5deg)">בדיקה עצמית קטנה</span>
-<h2 id="selfT" style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 900; color: #7A1C2B">האם היית רוצה...?</h2>
-<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #3D0E16">לחצו על כל מה שמתאים לכם — אין תשובות נכונות או לא נכונות.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
-<sc-for list="{{want}}" as="item" hint-placeholder-count="5"><button type="button" aria-pressed="{{item.pressedStr}}" onClick="{{item.toggle}}" style="display: flex; gap: 16px; align-items: flex-start; text-align: start; padding: 20px 22px; border-radius: 18px; border: 3px solid {{item.bd}}; background: {{item.bg}}; color: #24211F; font-family: inherit; font-size: 20px; line-height: 1.45; cursor: pointer; box-shadow: 0 4px 0 rgba(122,28,43,0.18)">
-<span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 3px solid #C1272D; background: {{item.dot}}; color: #FFFFFF; font-size: 20px; font-weight: 900; display: flex; align-items: center; justify-content: center">{{item.mark}}</span>
+<section aria-labelledby="selfT" style="background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 8px solid #3FA3D9; box-shadow: 0 6px 18px rgba(60,40,20,0.08); border-radius: 20px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px">
+<span style="align-self: flex-start; background: #A8DDF5; color: #7A1C2B; font-size: 15px; font-weight: 900; padding: 4px 14px; transform: rotate(-1.5deg)">בדיקה עצמית קטנה</span>
+<h2 id="selfT" style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 900; color: #7A1C2B">האם היית רוצה...?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #3D0E16">לחצו על כל מה שמתאים לכם — אין תשובות נכונות או לא נכונות.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{want}}" as="item" hint-placeholder-count="5"><button type="button" aria-pressed="{{item.pressedStr}}" onClick="{{item.toggle}}" style="display: flex; gap: 12px; align-items: center; text-align: start; padding: 12px 16px; border-radius: 14px; border: 2px solid {{item.bd}}; background: {{item.bg}}; color: #24211F; font-family: inherit; font-size: 15px; line-height: 1.4; cursor: pointer; box-shadow: 0 3px 0 rgba(122,28,43,0.18)">
+<span aria-hidden="true" style="flex: none; width: 28px; height: 28px; border-radius: 50%; border: 2px solid #C1272D; background: {{item.dot}}; color: #FFFFFF; font-size: 15px; font-weight: 900; display: flex; align-items: center; justify-content: center">{{item.mark}}</span>
 <span>{{item.t}}</span></button></sc-for>
 </div>
-<div style="background: #7A1C2B; color: #FFFFFF; border-radius: 18px; padding: 22px 28px; display: flex; flex-direction: column; gap: 6px">
-<p style="margin: 0; font-size: 20px; line-height: 1.4; font-weight: 600">אם סימנת וי ב2 תיבות לפחות ←</p>
-<p style="margin: 0; font-size: 26px; line-height: 1.3; font-weight: 900">הגיע הזמן לשלב אנשים בתהליך חיפוש העבודה שלך!</p>
-</div>
+<div aria-live="polite"><sc-if value="{{ready}}" hint-placeholder-val="{{ true }}"><div style="background: #C1272D; color: #FFFFFF; border-radius: 14px; padding: 14px 20px; display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 15px; line-height: 1.4; font-weight: 600">סימנת 2 תיבות או יותר ←</p>
+<p style="margin: 0; font-size: 20px; line-height: 1.3; font-weight: 900">הגיע הזמן לשלב אנשים בתהליך חיפוש העבודה שלך!</p>
+</div></sc-if></div>
 </section>
 <div style="align-self: flex-start; max-width: 720px; background: #A8DDF5; color: #3D0E16; font-size: 20px; font-weight: 700; line-height: 1.45; padding: 14px 22px; border-radius: 24px 24px 24px 6px">אבל אני לא מכיר.ה אנשים. המשפחה והחברים שלי לא בתחום שלי.</div>
 <section style="background: #FFFFFF; border: 1px solid #E6D9BE; border-top: 8px solid #C1272D; border-radius: 6px; box-shadow: 0 6px 18px rgba(60,40,20,0.08); padding: 30px 34px; display: flex; flex-direction: column; gap: 14px">

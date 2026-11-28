@@ -1,6 +1,18 @@
 (function () {
   'use strict';
-  var RED = '#C1272D', BUR = '#7A1C2B', SKY = '#A8DDF5', INK = '#24211F', CREAM = '#FBF3E0';
+  var RED = '#C1272D', BUR = '#000000', SKY = '#FFFFFF', INK = '#000000', CREAM = '#FFFFFF';
+  // Make an image pure black line-art on white (for printing): dark/colourful pixels -> black, light -> white.
+  function toInk(img, invert) {
+    var c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
+    var g = c.getContext('2d'); g.drawImage(img, 0, 0);
+    var d = g.getImageData(0, 0, c.width, c.height), p = d.data;
+    for (var i = 0; i < p.length; i += 4) {
+      var l = (p[i] * 0.3 + p[i + 1] * 0.59 + p[i + 2] * 0.11) / 255, a = p[i + 3] / 255;
+      var ink = invert ? Math.min(1, Math.max(0, (l - 0.35) / 0.55)) : Math.min(1, Math.max(0, (0.85 - l) / 0.6));
+      var v = Math.round(255 * (1 - ink * a)); p[i] = p[i + 1] = p[i + 2] = v; p[i + 3] = 255;
+    }
+    g.putImageData(d, 0, 0); return c;
+  }
   function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
   function msg(text, ok) {
     var box = document.getElementById('compassMsg');
@@ -36,14 +48,14 @@
     var c = document.createElement('canvas'); c.width = 1240; c.height = 1754;
     var x = c.getContext('2d'); x.direction = 'rtl'; x.textAlign = 'right'; x.textBaseline = 'top';
     x.fillStyle = CREAM; x.fillRect(0, 0, 1240, 1754);
-    x.fillStyle = RED; x.fillRect(0, 0, 1240, 22); x.fillRect(0, 1732, 1240, 22);
-    if (logo) x.drawImage(logo, 80, 70, 280, 280 * logo.naturalHeight / logo.naturalWidth);
-    if (road) x.drawImage(road, 80, 200, 200, 200);
+    x.fillStyle = '#000'; x.fillRect(0, 0, 1240, 10); x.fillRect(0, 1744, 1240, 10);
+    if (logo) x.drawImage(toInk(logo, false), 80, 70, 280, 280 * logo.naturalHeight / logo.naturalWidth);
+    if (road) x.drawImage(toInk(road, true), 80, 200, 200, 200);
     var R = 1160, W = 1060, y = 80;
-    x.fillStyle = RED; x.font = '800 68px Heebo'; x.fillText('מצפן למשרה הבאה שלי', R, y); y += 90;
+    x.fillStyle = '#000'; x.font = '800 68px Heebo'; x.fillText('מצפן למשרה הבאה שלי', R, y); y += 90;
     var name = val('regName');
     x.fillStyle = BUR; x.font = '700 30px Heebo'; if (name) { x.fillText(name, R, y); y += 46; }
-    x.fillStyle = '#1D6E9E'; x.font = '400 26px Heebo';
+    x.fillStyle = '#000'; x.font = '400 26px Heebo';
     x.fillText('תלו במקום בולט — ואתרו משרות שמתכתבות עם מה שכתוב כאן', R, y); y = 440;
     function chips(title, arr, color) {
       x.fillStyle = BUR; x.font = '800 30px Heebo'; x.fillText(title, R, y); y += 50;
@@ -51,8 +63,8 @@
       (arr.length ? arr : ['—']).forEach(function (s) {
         var w = x.measureText(s).width + 44;
         if (R - xx + w > W) { xx = R; y += 62; }
-        x.fillStyle = color; x.fillRect(xx - w, y, w, 50);
-        x.fillStyle = '#3D0E16'; x.fillText(s, xx - 22, y + 11); xx -= w + 14;
+        x.fillStyle = '#fff'; x.fillRect(xx - w, y, w, 50); x.strokeStyle = '#000'; x.lineWidth = 2; x.strokeRect(xx - w + 1, y + 1, w - 2, 48);
+        x.fillStyle = '#000'; x.fillText(s, xx - 22, y + 11); xx -= w + 14;
       });
       y += 86;
     }
@@ -61,7 +73,7 @@
       x.fillStyle = INK; x.font = '400 28px Heebo'; y = wrap(x, v || '—', R, y, W, 40); y += 20;
     }
     chips('מה חשוב לי במקום העבודה הבא', params, SKY);
-    chips('החוזקות שאביא איתי', strengths, '#F6CFCF');
+    chips('החוזקות שאביא איתי', strengths, '#FFFFFF');
     sec('השכר (ברוטו): הנמוך ביותר / האידיאלי', (val('fMin') || '—') + '  /  ' + (val('fIdeal') || '—'));
     sec('מה יכול לפצות אותי על שכר נמוך יחסית', val('fComp'));
     sec('דבר אחד שאני לא רוצה לוותר עליו', val('fKeep'));
@@ -69,7 +81,7 @@
     sec('תפקיד שנתקע לי בראש ושווה לבדוק', val('fStuck'));
     sec('2-3 תפקידים אפשריים עבורי', val('fRoles'));
     x.fillStyle = BUR; x.font = '700 24px Heebo';
-    x.fillText('סיפתח · וואטסאפ 02-5468647 · SIFTACH@jerusalem.muni.il', R, 1680);
+    x.fillText('סיפתח · וואטסאפ 02-5468647 · siftach@jerusalem.muni.il', R, 1680);
     return c;
   }
   document.addEventListener('click', async function (e) {

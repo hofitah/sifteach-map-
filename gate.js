@@ -18,7 +18,7 @@
     '#gate button:hover{background:#A51F25}#gate button[disabled]{opacity:.6;cursor:default}' +
     '#gate label.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:16px;margin:16px 0 0;cursor:pointer}#gate label.chk input{width:22px;height:22px;min-height:0;margin:2px 0 0;flex:none;accent-color:#C1272D}' +
     '#gate .err{color:#C1272D;font-size:15px;min-height:20px;margin-top:8px}' +
-    '#gate .note{font-size:13px;color:#5b5550;margin:10px 0 0}';
+    '#gate .note{font-size:13px;color:#5b5550;margin:8px 32px 0 0}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   var g = document.createElement('div');
@@ -26,15 +26,15 @@
   g.innerHTML =
     '<form class="card" novalidate>' +
     '<img src="logo.png" alt="סיפתח – מחברים אותך לקריירה בירושלים">' +
-    '<h2 id="gateT">ברוכים הבאים למפת הדרכים של מחפש העבודה המתחיל</h2>' +
+    '<h2 id="gateT">נעים להכיר!<span style="display:block;font-size:.8em;margin-top:4px">זו מפת הדרכים שלך לחיפוש עבודה</span></h2>' +
     '<p>רגע לפני שיוצאים לדרך – נשמח להכיר אותך.</p>' +
     '<label for="gName">שם מלא</label><input id="gName" autocomplete="name" required aria-required="true">' +
     '<label for="gEmail">מייל</label><input id="gEmail" type="email" autocomplete="email" dir="ltr" required aria-required="true">' +
     '<label for="gPhone">טלפון</label><input id="gPhone" type="tel" autocomplete="tel" dir="ltr" required aria-required="true">' +
     '<label class="chk"><input id="gMail" type="checkbox"> <span>אני מאשר/ת קבלת דיוור ועדכונים מאת מרכז סיפתח</span></label>' +
+    '<p class="note">הפרטים נשמרים אצל מרכז סיפתח ומשמשים ליצירת קשר בנוגע לליווי בחיפוש עבודה. ההתקדמות שלך במפה נשמרת במכשיר הזה בלבד. <a href="privacy.html" target="_blank" rel="noopener">למדיניות הפרטיות</a></p>' +
     '<div class="err" role="alert" aria-live="assertive"></div>' +
     '<button type="submit">כניסה למפה ←</button>' +
-    '<p class="note">הפרטים נשמרים אצל מרכז סיפתח ומשמשים ליצירת קשר בנוגע לליווי בחיפוש עבודה. ההתקדמות שלך במפה נשמרת במכשיר הזה בלבד. <a href="privacy.html" target="_blank" rel="noopener">למדיניות הפרטיות</a></p>' +
     '</form>';
   document.body.appendChild(g);
   var others = Array.prototype.filter.call(document.body.children, function (el) { return el !== g && el.tagName !== 'SCRIPT' && el.tagName !== 'TEMPLATE'; });
